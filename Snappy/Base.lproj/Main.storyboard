@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -94,11 +95,78 @@
                                 <action selector="logoutTapped:" destination="07E-eq-7QS" id="ACL-l7-CfU"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="T4I-YS-6sB">
+                            <connections>
+                                <segue destination="K5x-kl-4TN" kind="show" id="DS2-xf-QLB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0s-s8-5fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2132" y="117.39130434782609"/>
+        </scene>
+        <!--Picture View Controller-->
+        <scene sceneID="Yg6-xZ-UBe">
+            <objects>
+                <viewController id="K5x-kl-4TN" customClass="PictureViewController" customModule="Snappy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="98F-Ou-cX2"/>
+                        <viewControllerLayoutGuide type="bottom" id="ntp-M7-VGX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vlx-Pb-BFO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="beD-nw-3eB">
+                                <rect key="frame" x="45" y="84" width="285" height="165"/>
+                                <color key="backgroundColor" red="0.84357421874999994" green="0.84357421874999994" blue="0.84357421874999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="beD-nw-3eB" secondAttribute="height" multiplier="290:150" constant="-34.029850746268664" id="xUa-Dc-bl8"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JL6-Xd-vmf">
+                                <rect key="frame" x="45" y="264" width="285" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6h-bW-vma">
+                                <rect key="frame" x="171" y="314" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextTapped:" destination="K5x-kl-4TN" eventType="touchUpInside" id="jS2-5V-vrL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r6h-bW-vma" firstAttribute="centerX" secondItem="vlx-Pb-BFO" secondAttribute="centerX" id="4Cp-jK-zEc"/>
+                            <constraint firstItem="JL6-Xd-vmf" firstAttribute="top" secondItem="beD-nw-3eB" secondAttribute="bottom" constant="15" id="EeG-2F-vQe"/>
+                            <constraint firstItem="JL6-Xd-vmf" firstAttribute="centerX" secondItem="vlx-Pb-BFO" secondAttribute="centerX" id="LJT-61-gmN"/>
+                            <constraint firstAttribute="trailing" secondItem="beD-nw-3eB" secondAttribute="trailing" constant="45" id="N7y-Av-mGM"/>
+                            <constraint firstItem="beD-nw-3eB" firstAttribute="leading" secondItem="vlx-Pb-BFO" secondAttribute="leading" constant="45" id="SeV-H1-PWQ"/>
+                            <constraint firstItem="r6h-bW-vma" firstAttribute="top" secondItem="JL6-Xd-vmf" secondAttribute="bottom" constant="20" id="cfx-1M-3Ij"/>
+                            <constraint firstItem="beD-nw-3eB" firstAttribute="centerX" secondItem="vlx-Pb-BFO" secondAttribute="centerX" id="kNe-Zy-3aK"/>
+                            <constraint firstItem="beD-nw-3eB" firstAttribute="top" secondItem="98F-Ou-cX2" secondAttribute="bottom" constant="20" id="ssW-3O-YVX"/>
+                            <constraint firstItem="JL6-Xd-vmf" firstAttribute="width" secondItem="beD-nw-3eB" secondAttribute="width" id="xhd-Ma-Urb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="axn-Kf-2wp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="nb9-gv-wop">
+                            <connections>
+                                <action selector="cameraTapped:" destination="K5x-kl-4TN" id="eVs-xZ-L9t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="JL6-Xd-vmf" id="SWk-Uu-8ii"/>
+                        <outlet property="imageView" destination="beD-nw-3eB" id="XLW-0o-MK2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Vi-9a-A3o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2900" y="115.59220389805098"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Fg-kB-wp2">
