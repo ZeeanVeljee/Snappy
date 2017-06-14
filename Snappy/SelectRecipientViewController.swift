@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class SelectRecipientViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var users: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,14 @@ class SelectRecipientViewController: UIViewController, UITableViewDelegate, UITa
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
+        FIRDatabase.database().reference().child("users").observe(FIRDataEventType.childAdded, with: { (snapshot) in
+            let user = User()
+            
+            print(snapshot)
+            user.email = snapshot.value(forKey: "email") as! String
+            user.uid = snapshot.key
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,11 +37,16 @@ class SelectRecipientViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = UITableViewCell()
+        let user = users[indexPath.row]
+        
+        cell.textLabel?.text = user.email
+        
+        return cell
     }
     
 

@@ -39,6 +39,8 @@ class SignInViewController: UIViewController {
                 }
                 else {
                     print("Yaaay user created")
+                    FIRDatabase.database().reference().child("users").child(user!.uid).child("email").setValue(self.emailTextField.text!)
+                    
                     self.performSegue(withIdentifier: "signInSegue", sender: nil)
                 }
             })
