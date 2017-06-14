@@ -22,12 +22,19 @@ class SelectRecipientViewController: UIViewController, UITableViewDelegate, UITa
         tableView.delegate = self
         tableView.dataSource = self
         
+        //FIRDatabase.database().reference().keepSynced(true)
         FIRDatabase.database().reference().child("users").observe(FIRDataEventType.childAdded, with: { (snapshot) in
             let user = User()
             
             print(snapshot)
+            print(snapshot.value)
+            
             user.email = snapshot.value(forKey: "email") as! String
             user.uid = snapshot.key
+            
+            self.users.append(user)
+            
+            self.tableView.reloadData()
         })
     }
 
