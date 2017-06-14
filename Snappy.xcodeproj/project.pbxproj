@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		591CBDC51EE18DCF000C03D1 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591CBDC41EE18DCF000C03D1 /* PictureViewController.swift */; };
+		59A09F1E1EF16E9A00A2FA47 /* SelectRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A09F1D1EF16E9A00A2FA47 /* SelectRecipientViewController.swift */; };
 		59AD78581EE06C93009D0BA4 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AD78571EE06C93009D0BA4 /* SnapsViewController.swift */; };
 		59B291011EDF092700858271 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B291001EDF092700858271 /* AppDelegate.swift */; };
 		59B291031EDF092700858271 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B291021EDF092700858271 /* SignInViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		591CBDC41EE18DCF000C03D1 /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
+		59A09F1D1EF16E9A00A2FA47 /* SelectRecipientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRecipientViewController.swift; sourceTree = "<group>"; };
 		59AD78571EE06C93009D0BA4 /* SnapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		59B290FD1EDF092700858271 /* Snappy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snappy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59B291001EDF092700858271 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				59B291001EDF092700858271 /* AppDelegate.swift */,
 				59B291021EDF092700858271 /* SignInViewController.swift */,
 				59B291041EDF092700858271 /* Main.storyboard */,
+				59A09F1D1EF16E9A00A2FA47 /* SelectRecipientViewController.swift */,
 				591CBDC41EE18DCF000C03D1 /* PictureViewController.swift */,
 				59AD78571EE06C93009D0BA4 /* SnapsViewController.swift */,
 				59B291071EDF092800858271 /* Assets.xcassets */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A09F1E1EF16E9A00A2FA47 /* SelectRecipientViewController.swift in Sources */,
 				59B291031EDF092700858271 /* SignInViewController.swift in Sources */,
 				591CBDC51EE18DCF000C03D1 /* PictureViewController.swift in Sources */,
 				59B291011EDF092700858271 /* AppDelegate.swift in Sources */,
