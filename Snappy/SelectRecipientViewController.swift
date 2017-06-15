@@ -27,10 +27,9 @@ class SelectRecipientViewController: UIViewController, UITableViewDelegate, UITa
             let user = User()
             
             print(snapshot)
-            print(snapshot.value)
             
-            let x = snapshot.value as! NSDictionary
-            user.email = x["email"] as! String
+            let snapDictionary = snapshot.value as! NSDictionary
+            user.email = snapDictionary["email"] as! String
             user.uid = snapshot.key
             
             self.users.append(user)
